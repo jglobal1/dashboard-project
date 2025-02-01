@@ -38,9 +38,19 @@ const ShoeGrid = () => {
 
   const redirectToWhatsApp = () => {
     if (selectedShoe) {
+      const phoneNumber = "2348147410561"; // ✅ Correct WhatsApp number
       const message = `Hello, I am interested in buying "${selectedShoe.name}". Please provide more details.`;
-      const whatsappLink = `https://wa.me/2341234567890?text=${encodeURIComponent(message)}`;
+      const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      console.log("Redirecting to WhatsApp:", whatsappLink); // ✅ Debugging log
+
+      // Try opening in a new tab
       window.open(whatsappLink, "_blank");
+
+      // Fallback in case pop-up is blocked
+      setTimeout(() => {
+        window.location.href = whatsappLink;
+      }, 500);
     }
     setShowModal(false);
   };
