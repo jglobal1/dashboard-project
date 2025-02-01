@@ -1,10 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Define WhatsApp Number
+  const phoneNumber = "2348147410561"; // Ensure this is correct
+  const whatsappLink = `https://wa.me/${phoneNumber}`;
+
+  // Debugging: Log the generated WhatsApp link
+  console.log("Generated WhatsApp Link:", whatsappLink);
 
   return (
     <header className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-4 shadow-lg sticky top-0 z-50">
@@ -13,7 +20,7 @@ const Header = () => {
         <Link href="/" className="flex items-center space-x-3 cursor-pointer">
           <img
             src="ZIONLogobyDesigner.png" // Replace with the path to your logo file
-            alt="Emma Logo"
+            alt="Zion Logo"
             className="h-10 w-auto hover:opacity-90 transition-opacity duration-300"
           />
           <div className="flex flex-col">
@@ -89,15 +96,16 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* CTA Button */}
+        {/* WhatsApp CTA Button */}
         <div className="hidden lg:block">
-          <Link
-            href="https://wa.me/2348147410561"
+          <a
+            href={whatsappLink}
             target="_blank"
+            rel="noopener noreferrer"
             className="bg-red-400 text-gray-800 px-4 py-2 rounded-lg font-bold shadow-md hover:bg-yellow-300 transition-all duration-300"
           >
             Chat with Us
-          </Link>
+          </a>
         </div>
       </div>
     </header>
@@ -105,3 +113,4 @@ const Header = () => {
 };
 
 export default Header;
+
