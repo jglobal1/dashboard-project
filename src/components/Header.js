@@ -92,7 +92,7 @@ const Header = () => {
         {/* CTA Button */}
         <div className="hidden lg:block">
           <Link
-            href="https://wa.me/+2348147410561"
+            href="https://wa.me/2348147410561"
             target="_blank"
             className="bg-red-400 text-gray-800 px-4 py-2 rounded-lg font-bold shadow-md hover:bg-yellow-300 transition-all duration-300"
           >
